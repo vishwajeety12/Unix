@@ -2,22 +2,22 @@
 # File: guessinggame.sh
 #Function
 function guess(){
-    true_ans=$(ls -l |grep "^-"|wc -l)
+    ans=$(ls -l |grep "^-"|wc -l)
     # Loop
     while true;
     do
-        echo "Guess the number of directories-"
+        echo "Guess the number-"
         # User response
-        read  number
+        read  num
 	# If-then statement
-        if [ $number -lt $true_ans ]
+        if [ $num -lt $ans ]
         then
-            echo "Your guess is Less then the true number"
-        elif [ $number -gt $true_ans ]
+            echo "Your guess is Less then the current number of directory!"
+        elif [ $num -gt $ans ]
         then
-            echo "Your guess is Greater then the true number"
+            echo "Your guess is Greater then the current number of directory!"
         else
-            echo " Congratulation,you are right!"
+            echo " Congratulation, Your guess is Equal to the current number of directory!"
         break;
         fi
     done
